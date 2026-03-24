@@ -26,6 +26,10 @@
       content_category: "Lead Generation",
       status: "viewed"
     });
+    trackMeta("LandingPageView", {
+      page_type: "home",
+      source: "facebook"
+    }, "trackCustom");
   }
 
   function applySiteConfig() {
@@ -145,6 +149,7 @@
       content_category: "Lead Form"
     });
     trackMeta("LeadFormStart", { form_id: "quote-form" }, "trackCustom");
+    trackMeta("SubmitForm", { form_id: "quote-form" }, "trackCustom");
   }
 
   async function onSubmit(event) {
@@ -191,6 +196,10 @@
       trackMeta("LeadFormSuccess", {
         project_type: payload.project_type || "unknown",
         timeline: payload.timeline || "unknown"
+      }, "trackCustom");
+      trackMeta("Schedule", {
+        content_name: "estimate_request",
+        content_category: payload.project_type || "unknown"
       }, "trackCustom");
 
       form.reset();

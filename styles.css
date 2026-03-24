@@ -77,6 +77,13 @@ img {
   font-weight: 700;
 }
 
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .hero {
   padding: 3rem 0 6rem;
   position: relative;
@@ -294,6 +301,7 @@ textarea {
 
 .proof,
 .story,
+.services-overview,
 .services,
 .process,
 .faq,
@@ -333,6 +341,12 @@ textarea {
   gap: 1rem;
 }
 
+.services-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 .story-card h2 {
   margin-top: 0.55rem;
   font-size: clamp(1.55rem, 3vw, 2.2rem);
@@ -341,6 +355,29 @@ textarea {
 
 .story-accent {
   background: linear-gradient(180deg, rgba(46, 91, 79, 0.1), rgba(255, 250, 243, 0.92));
+}
+
+.overview-card {
+  padding: 1.4rem;
+  border-radius: var(--radius);
+  background: rgba(255, 250, 243, 0.8);
+  border: 1px solid var(--line);
+}
+
+.overview-accent {
+  background: linear-gradient(180deg, rgba(201, 119, 43, 0.12), rgba(255, 250, 243, 0.92));
+}
+
+.overview-card h2 {
+  margin-top: 0.55rem;
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  max-width: 14ch;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .faq-grid {
@@ -430,6 +467,7 @@ textarea {
   .hero-grid,
   .proof-grid,
   .story-grid,
+  .services-overview-grid,
   .service-grid,
   .process-grid,
   .faq-grid {
@@ -491,6 +529,10 @@ textarea {
     font-size: 0.95rem;
   }
 
+  .site-nav {
+    display: none;
+  }
+
   .hero-copy {
     padding-top: 0.25rem;
   }
@@ -528,6 +570,7 @@ textarea {
   .service-card,
   .proof article,
   .story-card,
+  .overview-card,
   .faq-card {
     padding: 1.1rem;
   }
