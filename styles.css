@@ -293,6 +293,7 @@ textarea {
 }
 
 .proof,
+.story,
 .services,
 .process,
 .faq,
@@ -311,6 +312,7 @@ textarea {
 
 .proof article,
 .service-card,
+.story-card,
 .faq-card,
 .process,
 .cta-strip {
@@ -320,8 +322,25 @@ textarea {
 
 .proof article,
 .service-card,
+.story-card,
 .faq-card {
   padding: 1.4rem;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.story-card h2 {
+  margin-top: 0.55rem;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  max-width: 14ch;
+}
+
+.story-accent {
+  background: linear-gradient(180deg, rgba(46, 91, 79, 0.1), rgba(255, 250, 243, 0.92));
 }
 
 .faq-grid {
@@ -410,6 +429,7 @@ textarea {
 @media (max-width: 980px) {
   .hero-grid,
   .proof-grid,
+  .story-grid,
   .service-grid,
   .process-grid,
   .faq-grid {
@@ -497,6 +517,7 @@ textarea {
   }
 
   .proof,
+  .story,
   .services,
   .process,
   .faq {
@@ -506,6 +527,7 @@ textarea {
 
   .service-card,
   .proof article,
+  .story-card,
   .faq-card {
     padding: 1.1rem;
   }
