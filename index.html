@@ -18,14 +18,17 @@
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://digitalreflection.github.io/95-concrete-landing-page/">
-  <meta property="og:image" content="https://placehold.co/1200x630/e9dfcf/1e1b16?text=95+Concrete">
+  <meta property="og:image" content="https://digitalreflection.github.io/95-concrete-landing-page/og-image.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="95 Concrete concrete contractor landing page">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="95 Concrete | Concrete Driveways, Patios, Slabs, and Repairs">
-  <meta name="twitter:description" content="95 Concrete is a veteran-owned concrete contractor building and replacing driveways, patios, sidewalks, slabs, and repairs.">
-  <meta name="twitter:image" content="https://placehold.co/1200x630/e9dfcf/1e1b16?text=95+Concrete">
+  <meta
+    name="twitter:description"
+    content="95 Concrete is a veteran-owned concrete contractor building and replacing driveways, patios, sidewalks, slabs, and repairs."
+  >
+  <meta name="twitter:image" content="https://digitalreflection.github.io/95-concrete-landing-page/og-image.svg">
   <meta name="theme-color" content="#c9772b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,35 +37,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
-
-  <script>
-    window.SITE_CONFIG = {
-      companyName: "95 Concrete",
-      phoneDisplay: "(555) 555-0195",
-      phoneLink: "+15555550195",
-      serviceArea: "Your service area here",
-      metaPixelId: "REPLACE_WITH_META_PIXEL_ID",
-      leadEndpoint: "REPLACE_WITH_FORM_ENDPOINT",
-      leadEndpointMode: "json",
-      thankYouUrl: "thank-you.html"
-    };
-  </script>
-
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-
-    if (window.SITE_CONFIG.metaPixelId && window.SITE_CONFIG.metaPixelId !== "REPLACE_WITH_META_PIXEL_ID") {
-      fbq("init", window.SITE_CONFIG.metaPixelId);
-      fbq("track", "PageView");
-    }
-  </script>
+  <script src="site-config.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -76,7 +51,7 @@
         "description": "95 Concrete is a veteran-owned concrete contractor building and replacing driveways, patios, sidewalks, slabs, and repairs.",
         "areaServed": "Your service area here",
         "priceRange": "$$",
-        "image": "https://placehold.co/1200x630/e9dfcf/1e1b16?text=95+Concrete",
+        "image": "https://digitalreflection.github.io/95-concrete-landing-page/og-image.svg",
         "sameAs": []
       },
       {
@@ -114,16 +89,11 @@
   }
   </script>
 </head>
-<body>
+<body data-page-type="landing" data-page-name="facebook-landing">
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top">95 Concrete</a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a class="header-phone" href="tel:+15555550195" data-track="phone-header">(555) 555-0195</a>
+      <a class="brand" href="#top" data-company-name>95 Concrete</a>
+      <a class="header-phone" href="tel:+15555550195" data-replace-phone-text data-track="phone-header">(555) 555-0195</a>
     </div>
   </header>
 
@@ -133,19 +103,27 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Veteran-owned concrete contractor</p>
-          <h1>Concrete driveways, patios, slabs, and repairs from 95 Concrete.</h1>
-          <p class="hero-text">
+          <h1 data-dynamic-headline>Concrete driveways, patios, slabs, and repairs from 95 Concrete.</h1>
+          <p class="hero-text" data-dynamic-subheadline>
             Fast response, clean work, durable pours, and a mobile-first estimate form built for Facebook traffic.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#quote-form" data-track="hero-cta">Get Free Estimate</a>
-            <a class="button button-secondary" href="tel:+15555550195" data-track="phone-hero">Call Now</a>
+            <a class="button button-primary" href="#quote-form" data-track="hero-cta" data-cta-label>Get Free Estimate</a>
+            <a class="button button-secondary" href="tel:+15555550195" data-replace-phone-text data-track="phone-hero">Call Now</a>
+          </div>
+
+          <p class="cta-note" data-cta-note>Takes about 30 seconds. No pressure. We follow up fast.</p>
+
+          <div class="trust-strip" aria-label="Trust signals">
+            <span>Veteran-owned</span>
+            <span data-response-promise>Fast callback and straightforward estimates.</span>
+            <span>No-pressure quote</span>
           </div>
 
           <ul class="hero-points">
-            <li>Driveways, patios, sidewalks, slabs</li>
-            <li>Repair, replacement, and new pours</li>
+            <li>Driveways, patios, sidewalks, slabs, and replacement</li>
+            <li>Mobile-friendly estimate form for Facebook traffic</li>
             <li>Veteran discipline, on-time crews, and jobsite pride</li>
           </ul>
         </div>
@@ -153,62 +131,64 @@
         <aside class="lead-card" aria-label="Request a quote">
           <div class="lead-card-top">
             <p class="lead-kicker">Request a quote</p>
-            <h2>Tell us about your project</h2>
-            <p>We’ll track your ad traffic, source, and lead submissions so follow-up stays organized.</p>
+            <h2>Tell us what you need and how to reach you.</h2>
+            <p>Short form. Fast follow-up. We keep the first step simple.</p>
           </div>
 
           <form id="quote-form" class="lead-form" novalidate>
-            <div class="field-row">
-              <label>
-                <span>Name</span>
-                <input type="text" name="name" autocomplete="name" required>
-              </label>
-              <label>
-                <span>Phone</span>
-                <input type="tel" name="phone" autocomplete="tel" required>
-              </label>
-            </div>
-
             <label>
-              <span>Email <em>(optional)</em></span>
-              <input type="email" name="email" autocomplete="email">
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" required>
             </label>
 
             <label>
-              <span>Project address <em>(optional)</em></span>
-              <input type="text" name="address" autocomplete="street-address">
+              <span>Phone</span>
+              <input type="tel" name="phone" autocomplete="tel" required>
             </label>
-
-            <div class="field-row">
-              <label>
-                <span>Project type</span>
-                <select name="project_type" required>
-                  <option value="">Select one</option>
-                  <option>Driveway</option>
-                  <option>Patio</option>
-                  <option>Sidewalk</option>
-                  <option>Slab</option>
-                  <option>Concrete replacement</option>
-                  <option>Repair</option>
-                  <option>Other</option>
-                </select>
-              </label>
-              <label>
-                <span>Timeline</span>
-                <select name="timeline">
-                  <option value="">Select one</option>
-                  <option>ASAP</option>
-                  <option>Within 30 days</option>
-                  <option>1 to 3 months</option>
-                  <option>Just researching</option>
-                </select>
-              </label>
-            </div>
 
             <label>
-              <span>Project details</span>
-              <textarea name="details" rows="4" placeholder="Size, current condition, finish, or anything else that helps us quote."></textarea>
+              <span>Project type</span>
+              <select name="project_type" required>
+                <option value="">Select one</option>
+                <option>Driveway</option>
+                <option>Patio</option>
+                <option>Sidewalk</option>
+                <option>Slab</option>
+                <option>Concrete replacement</option>
+                <option>Repair</option>
+                <option>Other</option>
+              </select>
             </label>
+
+            <label>
+              <span>Timeline <em>(optional)</em></span>
+              <select name="timeline">
+                <option value="">Select one</option>
+                <option>ASAP</option>
+                <option>Within 30 days</option>
+                <option>1 to 3 months</option>
+                <option>Just researching</option>
+              </select>
+            </label>
+
+            <details class="optional-fields">
+              <summary>Add more project details <span>(optional)</span></summary>
+
+              <label>
+                <span>Email <em>(optional)</em></span>
+                <input type="email" name="email" autocomplete="email">
+              </label>
+
+              <label>
+                <span>Project address <em>(optional)</em></span>
+                <input type="text" name="address" autocomplete="street-address">
+              </label>
+
+              <label>
+                <span>Project details <em>(optional)</em></span>
+                <textarea name="details" rows="4" placeholder="Size, condition, finish, or anything else that helps us quote."></textarea>
+              </label>
+            </details>
 
             <input type="hidden" name="page_url">
             <input type="hidden" name="page_title">
@@ -225,10 +205,19 @@
             <input type="hidden" name="event_id">
             <input type="hidden" name="submitted_at">
 
-            <button class="button button-primary button-block" type="submit">Request Free Estimate</button>
+            <button class="button button-primary button-block" type="submit" data-track="form-submit-intent" data-cta-label>
+              Request Free Estimate
+            </button>
             <p class="form-note">By submitting, you agree to be contacted about your project.</p>
             <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           </form>
+
+          <div class="next-steps">
+            <h3>What happens next</h3>
+            <p>1. We review your request.</p>
+            <p>2. We call or text you back.</p>
+            <p>3. We schedule the next step for an estimate.</p>
+          </div>
         </aside>
       </div>
     </section>
@@ -240,12 +229,54 @@
           <p>Direct communication, clean scheduling, and the kind of follow-through homeowners expect from a crew that takes pride in the job.</p>
         </article>
         <article>
-          <h3>Built for follow-up</h3>
-          <p>Clear forms, phone CTAs, and a fast-response layout remove friction for motivated buyers.</p>
+          <h3>Friction kept low</h3>
+          <p>Short form, tap-friendly buttons, and a clear next step reduce hesitation on mobile ad traffic.</p>
         </article>
         <article>
-          <h3>Built for optimization</h3>
-          <p>Meta Pixel events are triggered on page view, CTA clicks, form start, and successful lead submits.</p>
+          <h3>Tracking built in</h3>
+          <p>Page views, CTA clicks, phone clicks, form visibility, form starts, and successful lead submits are all tracked.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="fit">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Good fit for</p>
+          <h2>Why people usually land here and request a quote</h2>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card">
+            <h3>Cracked or failing concrete</h3>
+            <p>Driveways, patios, and walkways that look bad, hold water, or keep getting worse.</p>
+          </article>
+          <article class="fit-card">
+            <h3>New pour projects</h3>
+            <p>New patios, slabs, pads, and replacement work that need a clean, durable finish.</p>
+          </article>
+          <article class="fit-card">
+            <h3>People who want a clear next step</h3>
+            <p>No hunting around the site. Just call or request the estimate and we follow up from there.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-overview">
+      <div class="container services-overview-grid">
+        <article class="overview-card">
+          <p class="eyebrow">Fast path</p>
+          <h2>Click, call, or quote in under a minute.</h2>
+          <p>Every touchpoint is built to move paid traffic to one clear action without losing attribution.</p>
+          <div class="overview-actions">
+            <a class="button button-primary" href="#quote-form" data-track="overview-cta">Get Free Estimate</a>
+            <a class="button button-secondary hidden" href="#" data-track="reviews-cta" data-review-link>Read reviews</a>
+          </div>
+        </article>
+        <article class="overview-card overview-accent">
+          <p class="eyebrow">Built for Facebook</p>
+          <h2>Track the full funnel from ad to lead.</h2>
+          <p>We track page views, scroll depth, CTA clicks, phone calls, form visibility, form starts, and successful lead submits.</p>
         </article>
       </div>
     </section>
@@ -291,8 +322,8 @@
           <p class="eyebrow">Why choose us</p>
           <h2>Trusted like a local crew, run with veteran standards.</h2>
           <p>
-            95 Concrete is set up to feel personal: straight answers, respectful crews, and work that looks right from the curb.
-            If you want a contractor that shows up, communicates, and leaves the site clean, this is the page for that.
+            95 Concrete is built to feel personal: straight answers, respectful crews, and work that looks right from the curb.
+            If you want a contractor that shows up, communicates, and leaves the site clean, this page is built for that.
           </p>
         </article>
         <article class="story-card story-accent">
@@ -305,22 +336,6 @@
       </div>
     </section>
 
-    <section class="services-overview">
-      <div class="container services-overview-grid">
-        <article class="overview-card">
-          <p class="eyebrow">Fast path</p>
-          <h2>Click, call, or quote in under a minute.</h2>
-          <p>Every touchpoint is built to send warm traffic to the right next step and keep lead attribution intact.</p>
-          <a class="button button-primary" href="#quote-form" data-track="overview-cta">Get Free Estimate</a>
-        </article>
-        <article class="overview-card overview-accent">
-          <p class="eyebrow">Built for Facebook</p>
-          <h2>Track the full funnel from ad to booked job.</h2>
-          <p>We track view, scroll, button clicks, form start, and form submit events so you can optimize the campaigns that actually convert.</p>
-        </article>
-      </div>
-    </section>
-
     <section class="process">
       <div class="container process-grid">
         <div class="section-heading">
@@ -328,14 +343,14 @@
           <h2>Simple path from click to quote</h2>
         </div>
         <ol class="steps">
-          <li><strong>1.</strong> Visitor clicks your Facebook ad and lands here with campaign tags intact.</li>
-          <li><strong>2.</strong> Pixel tracks page engagement, button clicks, and form activity.</li>
-          <li><strong>3.</strong> Lead form submits with contact details plus attribution data for follow-up.</li>
+          <li><strong>1.</strong> Visitor clicks your Facebook ad and lands on a mobile-first quote page with matching service copy.</li>
+          <li><strong>2.</strong> Pixel and attribution capture page engagement, button clicks, phone calls, and form activity.</li>
+          <li><strong>3.</strong> Lead form submits with contact details plus campaign data for follow-up and optimization.</li>
         </ol>
       </div>
     </section>
 
-    <section class="faq">
+    <section class="faq" id="faq">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">FAQ</p>
@@ -352,7 +367,7 @@
           </article>
           <article class="faq-card">
             <h3>How do you track ads?</h3>
-            <p>We capture UTM tags, click IDs, page URL, referrer, and Meta Pixel events so leads can be tied back to campaigns.</p>
+            <p>We capture UTM tags, click IDs, page URL, referrer, Meta cookies, and page interaction events so leads can be tied back to campaigns.</p>
           </article>
         </div>
       </div>
@@ -364,19 +379,19 @@
           <p class="eyebrow">Need a faster response?</p>
           <h2>Call 95 Concrete now.</h2>
         </div>
-        <a class="button button-primary" href="tel:+15555550195" data-track="phone-footer">(555) 555-0195</a>
+        <a class="button button-primary" href="tel:+15555550195" data-replace-phone-text data-track="phone-footer">(555) 555-0195</a>
       </div>
     </section>
   </main>
 
   <div class="mobile-bar" aria-label="Quick contact actions">
     <a class="mobile-bar-button mobile-bar-call" href="tel:+15555550195" data-track="phone-mobile-bar">Call Now</a>
-    <a class="mobile-bar-button mobile-bar-quote" href="#quote-form" data-track="mobile-bar-cta">Free Estimate</a>
+    <a class="mobile-bar-button mobile-bar-quote" href="#quote-form" data-track="mobile-bar-cta" data-cta-label>Free Estimate</a>
   </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p><strong>95 Concrete</strong> <span id="service-area">Your service area here</span></p>
+      <p><strong data-company-name>95 Concrete</strong> <span id="service-area" data-service-area>Your service area here</span></p>
       <p class="footer-links">
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
@@ -386,6 +401,7 @@
     </div>
   </footer>
 
+  <script src="site.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

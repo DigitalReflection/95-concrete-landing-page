@@ -5,14 +5,18 @@ Static landing page for GitHub Pages with Meta Pixel-ready lead tracking.
 ## Files
 
 - `index.html`: main landing page
+- `site-config.js`: editable site defaults used across the funnel
+- `site.js`: shared Meta/page tracking and dynamic message matching
 - `styles.css`: page styles
-- `script.js`: attribution capture, form submit logic, Meta event tracking
+- `script.js`: landing page form submit logic and attribution capture
+- `services.html`, `about.html`, `contact.html`: supporting funnel pages
 - `thank-you.html`: post-submit page
 - `privacy.html`: basic privacy page
+- `og-image.svg`: social share image
 
 ## Before running traffic
 
-Update `window.SITE_CONFIG` in `index.html`:
+Update `window.SITE_CONFIG` in `site-config.js`, or use `/admin.html`:
 
 - `phoneDisplay`: business phone shown on the page
 - `phoneLink`: phone number in E.164 format without spaces, for example `+15555550195`
@@ -20,19 +24,22 @@ Update `window.SITE_CONFIG` in `index.html`:
 - `metaPixelId`: your Meta Pixel ID
 - `leadEndpoint`: your form endpoint
 - `leadEndpointMode`: use `json` for webhook-style endpoints or `form` for tools expecting URL-encoded form posts
+- `heroHeadline`, `heroSubheadline`, `ctaText`, `ctaNote`: core ad-landing copy
+- `reviewUrl`, `mapsUrl`: optional trust links
 
 ## Meta events implemented
 
 - `PageView`: base pixel page load
-- `ViewContent`: landing page viewed
+- `ViewContent`: funnel page viewed
 - `Lead`: successful form submit
 - `Contact`: phone clicks
-- `InitiateCheckout`: first form interaction, used here as lead-form-start signal
-- `LeadCTA`: custom event for CTA button clicks
+- `CTAInteraction`: custom event for CTA button clicks
+- `FunnelPageView`: custom event for page-level funnel tracking
+- `LeadFormView`: custom event when the quote form enters view
 - `LeadFormStart`: custom event on first form interaction
-- `LeadFormSuccess`: custom event on successful submit
+- `QuoteRequestSubmitted`: custom event on successful submit
 - `LeadFormError`: custom event on validation or submit failure
-- `ScrollDepth`: custom event at 25%, 50%, and 75%
+- `LeadConfirmationView`: custom event on the thank-you page
 
 ## Attribution captured with each lead
 
@@ -63,6 +70,7 @@ Update `window.SITE_CONFIG` in `index.html`:
 - Admin page: `/admin.html`
 - Password: `95concrete`
 - Settings are stored in the browser with `localStorage`, so this is a convenience gate, not secure authentication.
+- The admin page now also controls hero copy, CTA copy, trust links, Pixel ID, and form endpoint.
 
 ## Recommended next step
 

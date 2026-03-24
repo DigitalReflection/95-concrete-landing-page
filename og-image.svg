@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="95 Concrete">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f1e3cf" />
+      <stop offset="100%" stop-color="#f8f3ea" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1050" cy="120" r="180" fill="#d48d47" fill-opacity=".18" />
+  <circle cx="180" cy="520" r="210" fill="#2e5b4f" fill-opacity=".12" />
+  <rect x="80" y="80" width="1040" height="470" rx="36" fill="#fff8ef" stroke="#d6c8b4" />
+  <text x="120" y="190" fill="#2e5b4f" font-family="Georgia, serif" font-size="34" letter-spacing="5">VETERAN-OWNED CONCRETE CONTRACTOR</text>
+  <text x="120" y="310" fill="#201911" font-family="Georgia, serif" font-size="78" font-weight="700">95 Concrete</text>
+  <text x="120" y="390" fill="#6a5c4c" font-family="Arial, sans-serif" font-size="34">Driveways, patios, slabs, repairs, and replacement.</text>
+  <text x="120" y="445" fill="#6a5c4c" font-family="Arial, sans-serif" font-size="30">Fast estimates. Clean crews. Mobile-first lead funnel.</text>
+  <rect x="120" y="485" width="320" height="54" rx="27" fill="#c9772b" />
+  <text x="173" y="520" fill="#fffaf3" font-family="Arial, sans-serif" font-size="26" font-weight="700">Request Free Estimate</text>
+</svg>

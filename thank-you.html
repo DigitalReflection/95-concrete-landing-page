@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thanks | 95 Concrete</title>
   <meta name="description" content="Thank you for requesting a quote from 95 Concrete.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://digitalreflection.github.io/95-concrete-landing-page/thank-you.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -12,20 +14,23 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js"></script>
 </head>
-<body>
+<body data-page-type="thank-you" data-page-name="thank-you">
   <main class="hero">
     <div class="container">
       <section class="lead-card" style="max-width: 760px; margin: 5rem auto;">
         <p class="eyebrow">Request received</p>
-        <h1 style="font-size: clamp(2.4rem, 5vw, 4rem); max-width: none;">Thanks. We’ll review your project and follow up soon.</h1>
+        <h1 style="font-size: clamp(2.4rem, 5vw, 4rem); max-width: none;">Thanks. We will review your project and follow up soon.</h1>
         <p class="hero-text">If you need a faster response, call us directly.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="tel:+15555550195">(555) 555-0195</a>
-          <a class="button button-secondary" href="index.html">Back to landing page</a>
+          <a class="button button-primary" href="tel:+15555550195" data-replace-phone-text data-track="phone-thank-you">(555) 555-0195</a>
+          <a class="button button-secondary" href="index.html" data-track="thank-you-home">Back to landing page</a>
         </div>
       </section>
     </div>
   </main>
+
+  <script src="site.js"></script>
 </body>
 </html>

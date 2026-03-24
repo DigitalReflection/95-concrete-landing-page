@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin.html
+Disallow: /thank-you.html
 
 Sitemap: https://digitalreflection.github.io/95-concrete-landing-page/sitemap.xml

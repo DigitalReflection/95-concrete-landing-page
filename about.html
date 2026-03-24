@@ -6,9 +6,28 @@
   <title>About 95 Concrete</title>
   <meta name="description" content="Veteran-owned concrete contractor with a personal, reliable approach to concrete work.">
   <link rel="canonical" href="https://digitalreflection.github.io/95-concrete-landing-page/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js"></script>
 </head>
-<body>
+<body data-page-type="about" data-page-name="about">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" data-company-name>95 Concrete</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="header-phone" href="tel:+15555550195" data-replace-phone-text data-track="phone-about-header">(555) 555-0195</a>
+    </div>
+  </header>
+
   <main class="services" style="padding-top: 2rem;">
     <div class="container">
       <div class="story-card" style="max-width: 900px; margin: 0 auto;">
@@ -17,11 +36,24 @@
         <p class="hero-text">95 Concrete is built around showing up on time, communicating clearly, and leaving a job looking finished the right way.</p>
         <p class="hero-text">That means clean pours, honest expectations, and no runaround when homeowners need a concrete crew they can trust.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="index.html#quote-form">Get a Quote</a>
-          <a class="button button-secondary" href="services.html">See Services</a>
+          <a class="button button-primary" href="index.html#quote-form" data-track="about-quote-cta">Get a Quote</a>
+          <a class="button button-secondary" href="services.html" data-track="about-services-cta">See Services</a>
         </div>
       </div>
     </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong data-company-name>95 Concrete</strong> <span data-service-area>Your service area here</span></p>
+      <p class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>
