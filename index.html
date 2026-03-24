@@ -38,6 +38,7 @@
   >
   <link rel="stylesheet" href="styles.css">
   <script src="site-config.js"></script>
+  <script src="meta-bootstrap.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,16 +90,25 @@
   }
   </script>
 </head>
-<body data-page-type="landing" data-page-name="facebook-landing">
+<body data-page-type="landing" data-page-name="facebook-all-ads">
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" data-company-name>95 Concrete</a>
+      <a class="brand" href="#top" data-company-name data-track="brand-top">95 Concrete</a>
       <a class="header-phone" href="tel:+15555550195" data-replace-phone-text data-track="phone-header">(555) 555-0195</a>
+    </div>
+    <div class="landing-nav-wrap">
+      <nav class="container landing-nav" aria-label="Ad landing navigation">
+        <a href="#quote-form" data-track="nav-quote">Quote</a>
+        <a href="#jake-story" data-track="nav-jake">Jake</a>
+        <a href="#services" data-track="nav-services">Services</a>
+        <a href="#service-map" data-track="nav-map">Map</a>
+        <a href="#faq" data-track="nav-faq">FAQ</a>
+      </nav>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" id="hero" data-section="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -215,6 +225,18 @@
             <input type="hidden" name="_fbc">
             <input type="hidden" name="event_id">
             <input type="hidden" name="submitted_at">
+            <input type="hidden" name="event_source_url">
+            <input type="hidden" name="external_id">
+            <input type="hidden" name="session_id">
+            <input type="hidden" name="visitor_id">
+            <input type="hidden" name="matched_project">
+            <input type="hidden" name="hashed_email">
+            <input type="hidden" name="hashed_phone">
+            <input type="hidden" name="hashed_fn">
+            <input type="hidden" name="browser_language">
+            <input type="hidden" name="screen_size">
+            <input type="hidden" name="viewport_size">
+            <input type="hidden" name="browser_timezone">
 
             <button class="button button-primary button-block" type="submit" data-track="form-submit-intent" data-cta-label>
               Request Free Estimate
@@ -233,7 +255,7 @@
       </div>
     </section>
 
-    <section class="proof">
+    <section class="proof" data-section="proof">
       <div class="container proof-grid">
         <article>
           <h3>Veteran-run work ethic</h3>
@@ -245,12 +267,12 @@
         </article>
         <article>
           <h3>Tracking built in</h3>
-          <p>Page views, CTA clicks, phone clicks, form visibility, form starts, and successful lead submits are all tracked.</p>
+          <p>Page views, anchor nav taps, phone clicks, map intent, section visibility, form progress, and successful lead submits are all tracked.</p>
         </article>
       </div>
     </section>
 
-    <section class="owner-story">
+    <section class="owner-story" id="jake-story" data-section="jake-story">
       <div class="container owner-story-grid">
         <article class="owner-copy">
           <p class="eyebrow">Meet <span data-owner-name>Jake</span></p>
@@ -286,7 +308,7 @@
       </div>
     </section>
 
-    <section class="fit">
+    <section class="fit" data-section="fit">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Good fit for</p>
@@ -309,7 +331,7 @@
       </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services" data-section="services">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Services</p>
@@ -344,7 +366,7 @@
       </div>
     </section>
 
-    <section class="craft-section">
+    <section class="craft-section" data-section="craft">
       <div class="container craft-grid">
         <figure class="craft-media">
           <img
@@ -375,7 +397,39 @@
       </div>
     </section>
 
-    <section class="process">
+    <section class="service-map" id="service-map" data-section="service-map">
+      <div class="container map-grid">
+        <article class="map-copy">
+          <p class="eyebrow">Service Area Map</p>
+          <h2>See the area 95 Concrete is built to serve.</h2>
+          <p class="hero-text">
+            This section is for ad visitors who want one more trust signal before they call or request a quote.
+            Open the service-area map, call Jake, or jump straight to the form.
+          </p>
+          <div class="trust-strip map-trust">
+            <span data-service-area>Your service area here</span>
+            <span>Tracked map intent</span>
+            <span>Local-owner follow-up</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#quote-form" data-track="map-quote-cta">Get Free Estimate</a>
+            <a class="button button-secondary" href="tel:+15555550195" data-track="phone-map-call">Call Jake</a>
+            <a class="button button-secondary" href="#" data-map-link data-track="map-directions">Open Map</a>
+          </div>
+        </article>
+        <div class="map-frame-wrap">
+          <iframe
+            title="95 Concrete service area map"
+            data-map-frame
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Your%20service%20area%20here&output=embed"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" data-section="process">
       <div class="container process-grid">
         <div class="section-heading">
           <p class="eyebrow">Process</p>
@@ -389,7 +443,7 @@
       </div>
     </section>
 
-    <section class="faq" id="faq">
+    <section class="faq" id="faq" data-section="faq">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">FAQ</p>
@@ -425,6 +479,7 @@
 
   <div class="mobile-bar" aria-label="Quick contact actions">
     <a class="mobile-bar-button mobile-bar-call" href="tel:+15555550195" data-track="phone-mobile-bar">Call Now</a>
+    <a class="mobile-bar-button mobile-bar-map" href="#service-map" data-track="mobile-map-nav">Map</a>
     <a class="mobile-bar-button mobile-bar-quote" href="#quote-form" data-track="mobile-bar-cta" data-cta-label>Free Estimate</a>
   </div>
 
@@ -432,10 +487,10 @@
     <div class="container footer-inner">
       <p><strong data-company-name>95 Concrete</strong> <span id="service-area" data-service-area>Your service area here</span></p>
       <p class="footer-links">
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy policy</a>
+        <a href="services.html" data-track="footer-services">Services</a>
+        <a href="about.html" data-track="footer-about">About</a>
+        <a href="contact.html" data-track="footer-contact">Contact</a>
+        <a href="privacy.html" data-track="footer-privacy">Privacy policy</a>
       </p>
     </div>
   </footer>
