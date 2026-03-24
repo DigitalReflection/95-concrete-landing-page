@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>95 Concrete Admin</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .admin-shell { max-width: 920px; margin: 3rem auto 6rem; }
+    .admin-panel { display: none; }
+    .admin-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .admin-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .admin-note { color: var(--muted); font-size: 0.95rem; }
+    .admin-lock { max-width: 420px; margin: 0 auto; }
+    .wide { grid-column: 1 / -1; }
+    .hidden { display: none !important; }
+    @media (max-width: 640px) { .admin-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="services">
+    <div class="container admin-shell">
+      <section id="lock-screen" class="lead-card admin-lock">
+        <p class="eyebrow">Admin</p>
+        <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); max-width: none;">Settings access</h1>
+        <p class="admin-note">This is a browser-side gate for convenience. It is not secure enough for sensitive data.</p>
+        <label>
+          <span>Password</span>
+          <input id="admin-password" type="password" placeholder="Enter admin password">
+        </label>
+        <div class="admin-actions">
+          <button id="unlock-btn" class="button button-primary" type="button">Unlock</button>
+        </div>
+        <p id="lock-status" class="form-status" aria-live="polite"></p>
+      </section>
+
+      <section id="admin-panel" class="lead-card admin-panel">
+        <p class="eyebrow">Live settings</p>
+        <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); max-width: none;">Update site settings</h1>
+        <p class="admin-note">Changes save in this browser and apply on page load for the live site.</p>
+
+        <form id="settings-form">
+          <div class="admin-grid">
+            <label class="wide">
+              <span>Page title</span>
+              <input name="pageTitle" type="text">
+            </label>
+            <label class="wide">
+              <span>Page description</span>
+              <textarea name="pageDescription" rows="3"></textarea>
+            </label>
+            <label>
+              <span>Phone display</span>
+              <input name="phoneDisplay" type="text">
+            </label>
+            <label>
+              <span>Phone link</span>
+              <input name="phoneLink" type="text">
+            </label>
+            <label class="wide">
+              <span>Service area</span>
+              <input name="serviceArea" type="text">
+            </label>
+            <label>
+              <span>Meta Pixel ID</span>
+              <input name="metaPixelId" type="text">
+            </label>
+            <label>
+              <span>Lead endpoint</span>
+              <input name="leadEndpoint" type="url">
+            </label>
+            <label>
+              <span>Lead endpoint mode</span>
+              <select name="leadEndpointMode">
+                <option value="json">json</option>
+                <option value="form">form</option>
+              </select>
+            </label>
+            <label>
+              <span>Thank-you URL</span>
+              <input name="thankYouUrl" type="text">
+            </label>
+          </div>
+
+          <div class="admin-actions">
+            <button class="button button-primary" type="submit">Save settings</button>
+            <button id="reset-btn" class="button button-secondary" type="button">Reset to defaults</button>
+          </div>
+          <p id="save-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var ADMIN_PASSWORD = "95concrete";
+      var DEFAULTS = {
+        pageTitle: "95 Concrete | Free Concrete Estimate",
+        pageDescription: "Get a fast quote for driveways, patios, sidewalks, slabs, and concrete replacement from 95 Concrete.",
+        phoneDisplay: "(555) 555-0195",
+        phoneLink: "+15555550195",
+        serviceArea: "Your service area here",
+        metaPixelId: "REPLACE_WITH_META_PIXEL_ID",
+        leadEndpoint: "REPLACE_WITH_FORM_ENDPOINT",
+        leadEndpointMode: "json",
+        thankYouUrl: "thank-you.html"
+      };
+
+      var lockScreen = document.getElementById("lock-screen");
+      var adminPanel = document.getElementById("admin-panel");
+      var passwordInput = document.getElementById("admin-password");
+      var unlockBtn = document.getElementById("unlock-btn");
+      var lockStatus = document.getElementById("lock-status");
+      var saveStatus = document.getElementById("save-status");
+      var form = document.getElementById("settings-form");
+      var resetBtn = document.getElementById("reset-btn");
+
+      function loadSettings() {
+        try {
+          return Object.assign({}, DEFAULTS, JSON.parse(localStorage.getItem("95_concrete_settings") || "{}"));
+        } catch (error) {
+          return Object.assign({}, DEFAULTS);
+        }
+      }
+
+      function saveSettings(settings) {
+        localStorage.setItem("95_concrete_settings", JSON.stringify(settings));
+      }
+
+      function fillForm(settings) {
+        Object.keys(settings).forEach(function (key) {
+          var field = form.querySelector('[name="' + key + '"]');
+          if (field) {
+            field.value = settings[key];
+          }
+        });
+      }
+
+      function showPanel() {
+        lockScreen.classList.add("hidden");
+        adminPanel.style.display = "block";
+      }
+
+      function unlock() {
+        if (passwordInput.value === ADMIN_PASSWORD) {
+          lockStatus.textContent = "";
+          showPanel();
+          fillForm(loadSettings());
+        } else {
+          lockStatus.textContent = "Incorrect password.";
+        }
+      }
+
+      unlockBtn.addEventListener("click", unlock);
+      passwordInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          unlock();
+        }
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var current = loadSettings();
+        var next = Object.assign({}, current);
+        new FormData(form).forEach(function (value, key) {
+          next[key] = value.trim();
+        });
+        saveSettings(next);
+        saveStatus.textContent = "Saved. Refresh the landing page to apply.";
+      });
+
+      resetBtn.addEventListener("click", function () {
+        saveSettings(DEFAULTS);
+        fillForm(DEFAULTS);
+        saveStatus.textContent = "Reset to defaults.";
+      });
+
+      fillForm(loadSettings());
+    })();
+  </script>
+</body>
+</html>

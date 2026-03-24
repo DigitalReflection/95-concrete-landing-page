@@ -58,6 +58,12 @@ Update `window.SITE_CONFIG` in `index.html`:
 3. In GitHub repository settings, enable GitHub Pages from the branch root.
 4. Add your real Pixel ID and lead endpoint before sending traffic.
 
+## Settings page
+
+- Admin page: `/admin.html`
+- Password: `95concrete`
+- Settings are stored in the browser with `localStorage`, so this is a convenience gate, not secure authentication.
+
 ## Recommended next step
 
 For stronger Meta attribution, pair this page with Conversions API on the endpoint that receives the form submission and reuse the same `event_id` for deduplication.

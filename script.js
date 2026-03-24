@@ -1,5 +1,6 @@
 (function () {
-  var config = window.SITE_CONFIG || {};
+  var baseConfig = window.SITE_CONFIG || {};
+  var config = mergeConfig(baseConfig, loadOverrides());
   var form = document.getElementById("quote-form");
   var statusEl = document.getElementById("form-status");
   var serviceAreaEl = document.getElementById("service-area");
@@ -11,6 +12,8 @@
   if (serviceAreaEl && config.serviceArea) {
     serviceAreaEl.textContent = config.serviceArea;
   }
+
+  applyMetaTags();
 
   applySiteConfig();
   persistAttribution();
@@ -35,6 +38,27 @@
         link.href = "tel:" + config.phoneLink;
       }
     });
+  }
+
+  function applyMetaTags() {
+    if (config.pageTitle) {
+      document.title = config.pageTitle;
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute("content", config.pageTitle);
+      }
+    }
+
+    if (config.pageDescription) {
+      var metaDescription = document.querySelector('meta[name="description"]');
+      var ogDescription = document.querySelector('meta[property="og:description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute("content", config.pageDescription);
+      }
+      if (ogDescription) {
+        ogDescription.setAttribute("content", config.pageDescription);
+      }
+    }
   }
 
   function getParam(name) {
@@ -261,6 +285,27 @@
   function getCookie(name) {
     var match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
     return match ? decodeURIComponent(match[2]) : "";
+  }
+
+  function loadOverrides() {
+    try {
+      return JSON.parse(localStorage.getItem("95_concrete_settings") || "{}");
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function mergeConfig(base, overrides) {
+    var merged = {};
+    Object.keys(base).forEach(function (key) {
+      merged[key] = base[key];
+    });
+    Object.keys(overrides || {}).forEach(function (key) {
+      if (overrides[key] !== "" && overrides[key] !== null && typeof overrides[key] !== "undefined") {
+        merged[key] = overrides[key];
+      }
+    });
+    return merged;
   }
 
   function setCookie(name, value, days) {
