@@ -65,6 +65,7 @@
 
   function applyConfig() {
     updateText("[data-company-name]", config.companyName);
+    updateText("[data-owner-name]", config.ownerName);
     updateText("[data-service-area]", config.serviceArea);
     updateText("[data-response-promise]", config.responsePromise);
     updateText("[data-cta-label]", config.ctaText);

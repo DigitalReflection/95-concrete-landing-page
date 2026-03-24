@@ -1,5 +1,6 @@
 window.SITE_CONFIG = {
   companyName: "95 Concrete",
+  ownerName: "Jake",
   phoneDisplay: "(555) 555-0195",
   phoneLink: "+15555550195",
   serviceArea: "Your service area here",
@@ -9,11 +10,11 @@ window.SITE_CONFIG = {
   thankYouUrl: "thank-you.html",
   pageTitle: "95 Concrete | Concrete Driveways, Patios, Slabs, and Repairs",
   pageDescription: "95 Concrete is a veteran-owned concrete contractor building and replacing driveways, patios, sidewalks, slabs, and repairs.",
-  heroHeadline: "Concrete driveways, patios, slabs, and repairs from 95 Concrete.",
-  heroSubheadline: "Fast response, clean work, durable pours, and a mobile-first estimate form built for Facebook traffic.",
+  heroHeadline: "Concrete work that looks right on your house and holds up.",
+  heroSubheadline: "Jake runs 95 Concrete with veteran discipline, clean crews, and straight answers for driveway, patio, slab, and replacement jobs.",
   ctaText: "Get Free Estimate",
   ctaNote: "Takes about 30 seconds. No pressure. We follow up fast.",
-  responsePromise: "Fast callback and straightforward estimates.",
+  responsePromise: "Ask for Jake. Fast callback and straightforward estimates.",
   reviewLabel: "Read reviews",
   reviewUrl: "",
   mapsUrl: ""
